@@ -4,6 +4,15 @@ end
 
 def request_calc
     puts "Type a to advanced calculator or b for basic."
+    request_calculator = gets
+end
+
+def choice
+    if request_calculator == "b"
+        return basic_calc
+    else request_calculator == "a"
+        return advanced
+
 end
 
 def basic_calc
@@ -24,14 +33,41 @@ def basic_calc
 
 end
 
-def basic_calc_ans
-    if operation_selection == "add"
+def basic_calc_ans (operator, a, b)
+    if operator == "add"
         return result = a + b
-    elsif operation_selection == "subtract"
+    elsif operator == "subtract"
         return result = a - b
-    elsif operation_selection == "multiply"
+    elsif operator == "multiply"
         return result = a * b
-    elsif operation_selection == "divide"
+    elsif operator == "divide"
         return result = a / b
     end
+end
+
+calculating = 1
+
+while calculating == 1
+    current_calculation = basic_calc()
+
+    if current_calculation == "error"
+        puts "Try again"
+    else
+        puts "First number #{current_calculation}: "
+        first_num = gets.to_i
+        puts "Second number #{current_calculation}: "
+        second_num = gets.to_i
+
+        ans = basic_calc_ans(current_calculation, first_num, second_num)
+
+        puts "Answer is #{ans}"
+        puts "Enter r to run another calculation or q to quit: "
+        calculating = gets
+
+        if calculating != "r"
+            puts "The End"
+
+        end
+    end
+end
 end
