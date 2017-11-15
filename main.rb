@@ -2,30 +2,30 @@ def message
     puts " welcome to my calculator"
 end
 
-def request_calc
-    puts "Type a to advanced calculator or b for basic."
-    request_calculator = gets
-end
+# def request_calc
+#     puts "Type a to advanced calculator or b for basic."
+#     request_calculator = gets
+# end
 
-def choice
-    if request_calculator == "b"
-        return basic_calc
-    else request_calculator == "a"
-        return advanced
-
-end
+# def choice
+#     if request_calculator == "b"
+#         return basic_calc
+#     else request_calculator == "a"
+#         return advanced
+#
+# end
 
 def basic_calc
     puts "Type a to add, s to subtract, m to multiply or d to divide two numbers: "
     operation_selection = gets
 
-    if operation_selection == a
-        return "add"
-    elsif operation_selection == s
+    if operation_selection == "a"
+        "add"
+    elsif operation_selection == "s"
         return "subtract"
-    elsif operation_selection == m
+    elsif operation_selection == "m"
         return "multiply"
-    elsif operation_selection == d
+    elsif operation_selection == "d"
         return "divide"
     else
         return "error"
@@ -70,4 +70,10 @@ while calculating == 1
         end
     end
 end
-end
+
+
+message
+# request_calc
+# choice
+basic_calc
+basic_calc_ans
